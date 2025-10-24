@@ -10,24 +10,25 @@ void solve()
 {
     int n;
     cin >> n;
-    vector<vector<int>> team(3,vector<int> (n));
-    for(int i = 0 ; i < 3 ; i++){
-        for(int j = 0 ; j < n ; j++){
+    vector<vector<int>> team(n,vector<int> (3));
+    for(int i = 0 ; i < n ; i++){
+        for(int j = 0 ; j < 3 ; j++){
             cin >> team[i][j];
         }
     } 
 
     int sum = 0;
-    for(int i = 0 ; i < 3 ; i++){
+    for(int i = 0 ; i < n ; i++){
         int count = 0;
-        for(int j = 0 ; j < n ;j++){
+        for(int j = 0 ; j < 3 ;j++){
             if(team[i][j] == 1){
-                 count += 1;
+                 count += 1; 
             }
         }
-        if(count == 2){
+        if(count >= 2){
             sum += 1;
         }
+        
     }
 
     cout << sum << endl;
@@ -44,7 +45,7 @@ int32_t main()
     fast_io;
 
     int t;
-    cin>>t;
+    t=1;
     while(t--)
     {
         solve();
