@@ -11,24 +11,33 @@ void solve()
     int n; 
     cin >> n;
     vector<int> toy(n);
-    for(int i = 0 ; i < n ; i++){
+    for(int i = 0 ; i < n ; i++)
+    {
         cin >> toy[i];
     }
-      vector<int> small(n);
-    for(int i = 0 ; i < n ; i++){
-        small[i] ==  toy[i];
-    }
-
-    sort(small.begin() , small.end());
-
-    for(int i = 0 ; i < n ; i++){
-        for(int j = 0 ; j < n ; j++){
-            if()
+    
+    bool f=false;
+    for(int i=0;i<n-1;i++)
+    {
+        if(toy[i]%2!=toy[i+1]%2)
+        {
+            f=true;
+            break;
         }
     }
-    return;
-}
 
+    if(f)
+    {
+        sort(all(toy));
+    }
+    
+    for(int i = 0 ; i < n ; i++)
+    {
+        cout << toy[i] << " ";
+    }
+    
+    cout << endl;
+}
 int32_t main()
 {
     #ifndef ONLINE_JUDGE
